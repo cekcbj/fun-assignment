@@ -31,16 +31,10 @@ title= new_movies.map{|movie| movie[:title]}
 print title
 
 
-leo = movies.select do |movie|
+leo = movies.select {|movie|movie[:stars].include? "Leonardo DiCaprio"}
+.map{|movie|movie[:title]}
 
-  movie[:stars].include? "Leonardo DiCaprio"
-
-end
-
-only_leo =leo.map{|movie|movie[:title]}
-
-print only_leo
-
+print leo
   # movies.each do |x|
 #    x.each do |element1, element2|
 #      if element2.is_a?(Array)
